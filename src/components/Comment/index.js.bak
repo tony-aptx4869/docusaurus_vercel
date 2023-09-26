@@ -1,13 +1,11 @@
 import React from 'react';
-import Giscus from '@giscus/react';
 import { useColorMode } from '@docusaurus/theme-common'
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import BrowserOnly from '@docusaurus/BrowserOnly'
+import Giscus from '@giscus/react'
+
 
 export const Comment = () => {
-  const colorMode = useColorMode().colorMode
-  const currentLocale = useDocusaurusContext().i18n.currentLocale
-  const giscusConfigs = {
+  const giscusConfig = {
     id: 'comments',
     repo: 'tony-aptx4869/docusaurus_vercel',
     repoId: 'R_kgDOKYc1NA',
@@ -19,17 +17,18 @@ export const Comment = () => {
     reactionsEnabled: '1',
     emitMetadata: '0',
     inputPosition: 'top',
+    theme: 'light_tritanopia',
+    darktheme: 'dark_tritanopia',
     lang: 'zh-Hans',
     loading: 'lazy',
-    theme: colorMode === 'dark' ? 'dark_tritanopia' : 'light_tritanopia',
-    lang: currentLocale,
   }
+  giscusConfig.theme = useColorMode().colorMode === 'dark' ? giscusConfig.darktheme : giscusConfig.theme
   return (
-    <div style={{ paddingTop: 69 }}>
+    
       <BrowserOnly fallback={<div>Loading Comments...</div>}>
-        {() => <Giscus {...giscusConfigs} />}
+        {() => <Giscus {...giscusConfig} />}
       </BrowserOnly>
-    </div>
+    
   );
 };
 

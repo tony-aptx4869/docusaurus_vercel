@@ -1,0 +1,35 @@
+import React from 'react';
+import Giscus from '@giscus/react';
+import { useColorMode } from '@docusaurus/theme-common'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
+
+export const Comment = () => {
+  const colorMode = useColorMode().colorMode
+  const currentLocale = useDocusaurusContext().i18n.currentLocale
+  const giscusConfigs = {
+    theme: colorMode === 'dark' ? 'dark_tritanopia' : 'light_tritanopia',
+    lang: currentLocale,
+  }
+  return (
+    <div style={{ paddingTop: 50 }}>
+      <Giscus
+        id='comments'
+        repo='tony-aptx4869/docusaurus_vercel'
+        repoId='R_kgDOKYc1NA'
+        category='General'
+        categoryId='DIC_kwDOKYc1NM4CZoiz'
+        mapping='pathname'
+        strict='1'
+        term='Comments Powered by giscus.'
+        reactionsEnabled='1'
+        emitMetadata='0'
+        inputPosition='top'
+        theme={giscusConfigs.theme}
+        lang={giscusConfigs.lang}
+        loading='lazy'
+      />
+    </div>
+  );
+};
+
+export default Comment;

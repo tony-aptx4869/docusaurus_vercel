@@ -11,7 +11,6 @@ import DocItemTOCDesktop from '@theme/DocItem/TOC/Desktop';
 import DocItemContent from '@theme/DocItem/Content';
 import DocBreadcrumbs from '@theme/DocBreadcrumbs';
 import styles from './styles.module.css';
-// Comments powered by giscus
 import Comment from '@site/src/components/Comment';
 
 /**
@@ -33,7 +32,6 @@ function useDocTOC() {
     desktop,
   };
 }
-
 export default function DocItemLayout({children}) {
   const docTOC = useDocTOC();
   return (

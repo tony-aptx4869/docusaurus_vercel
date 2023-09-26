@@ -7,7 +7,6 @@ import BlogPostItem from '@theme/BlogPostItem';
 import BlogPostPaginator from '@theme/BlogPostPaginator';
 import BlogPostPageMetadata from '@theme/BlogPostPage/Metadata';
 import TOC from '@theme/TOC';
-// Comments powered by giscus
 import Comment from '@site/src/components/Comment';
 
 function BlogPostPageContent({sidebar, children}) {
@@ -35,10 +34,10 @@ function BlogPostPageContent({sidebar, children}) {
       {(nextItem || prevItem) && (
         <BlogPostPaginator nextItem={nextItem} prevItem={prevItem} />
       )}
+      <Comment />
     </BlogLayout>
   );
 }
-
 export default function BlogPostPage(props) {
   const BlogPostContent = props.content;
   return (
@@ -52,7 +51,6 @@ export default function BlogPostPage(props) {
         <BlogPostPageContent sidebar={props.sidebar}>
           <BlogPostContent />
         </BlogPostPageContent>
-        <Comment />
       </HtmlClassNameProvider>
     </BlogPostProvider>
   );

@@ -13,8 +13,8 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title"><Translate>APTX4869</Translate></h1>
-        <p className="hero__subtitle"><Translate>笑一个吧🤪，功成名就不是目的</Translate></p>
+        <h1 className="hero__title">APTX4869</h1>
+        <p className="hero__subtitle">笑一个吧🤪，功成名就不是目的</p>
       </div>
     </header>
   );
@@ -24,7 +24,7 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
+      title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
