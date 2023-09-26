@@ -110,8 +110,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: '三体',
+                to: '/docs/category/三体',
               },
             ],
           },
